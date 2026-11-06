@@ -27,12 +27,7 @@
     .skip-link { position:fixed; top:12px; left:12px; z-index:10; transform:translateY(-180%); padding:12px 18px; background:var(--gold); color:#03180f; border-radius:8px; font-weight:700; } .skip-link:focus { transform:translateY(0); }
     .page-shell { width:min(100% - 64px,1080px); margin:auto; }
     .masthead { min-height:83px; display:flex; align-items:center; justify-content:space-between; gap:16px; font-size:10px; font-weight:600; letter-spacing:.19em; }
-    .wordmark { display:flex; gap:12px; align-items:center; } .wordmark strong { font-family:Montserrat,sans-serif; font-size:15px; font-weight:800; letter-spacing:.1em; } .wordmark em { font-style:normal; color:var(--muted); font-weight:400; margin-left:7px; }
-    .flag-mark { width:26px; height:20px; display:grid; align-content:center; gap:4px; } .flag-mark i { height:4px; display:block; background:#22b779; } .flag-mark i:nth-child(2) { background:var(--gold); width:20px; } .flag-mark i:last-child { background:#6a94ee; width:14px; }
     .masthead-label { display:flex; align-items:center; gap:9px; color:#cbd5e1; } .status-dot { width:5px; height:5px; border-radius:50%; background:var(--gold); box-shadow:0 0 12px #f5c51866; }
-    .banner-wrap { position:relative; aspect-ratio:1915/821; overflow:hidden; border-radius:20px; border:1px solid #779b4a44; background:#0a2b21; box-shadow:0 20px 90px #0004; }
-    .banner-wrap::after { content:""; position:absolute; inset:0; border-radius:inherit; box-shadow:inset 0 0 0 1px #ffffff0b; pointer-events:none; }
-    #hero-banner,#banner-fallback { width:100%; height:100%; display:block; object-fit:cover; } #hero-banner { position:absolute; inset:0; }
     .intro { text-align:center; max-width:840px; margin:38px auto 30px; }
     .foundation { display:inline-flex; align-items:center; justify-content:center; gap:7px; border:1px solid #c6a7353d; border-radius:50px; padding:8px 14px; background:linear-gradient(100deg,#e3c53d0e,#10b9810b); color:#e5d591; font-size:11px; font-weight:500; box-shadow:0 0 28px #d3bb3f07; } .foundation .icon { height:14px; width:14px; }
     h1 { font-family:Montserrat,Inter,sans-serif; font-size:clamp(29px,4.5vw,49px); font-weight:800; line-height:1.16; letter-spacing:-.045em; margin:21px 0 16px; } h1 span { color:var(--gold); }
@@ -57,61 +52,187 @@
     .action { display:inline-flex; align-items:center; justify-content:center; gap:9px; padding:12px 19px; min-height:46px; border-radius:9px; border:1px solid #64896959; font-size:11px; font-weight:700; transition:transform .2s,background .2s; } .action .icon { width:17px; height:17px; } .action:hover { transform:translateY(-2px); background:#ffffff09; } .action-primary { color:#15301b; background:linear-gradient(120deg,#f6d148,#e5b81c); border-color:#f4d567; box-shadow:0 4px 18px #f5c51815; } .action-primary:hover { background:#ffda4e; } .action-whatsapp { background:#16a36508; color:#cfeddb; }
     footer { max-width:900px; margin:39px auto 0; border-top:1px solid var(--line); padding:31px 0 26px; text-align:center; } .footer-name { font-family:Montserrat,sans-serif; font-weight:700; font-size:12px; margin:0 0 8px; } .footer-location { font-size:10px; color:#a6bcad; margin:0; } .motto { font-size:10px; color:#7e9b89; margin:10px 0 25px; } .footer-bottom { border-top:1px solid #ffffff07; padding-top:18px; display:flex; justify-content:space-between; align-items:center; gap:16px; color:#7f9a8a; font-size:9px; } #back-to-top { display:inline-flex; gap:8px; align-items:center; padding:8px 0 8px 12px; color:#b5c8bb; font-size:10px; min-height:40px; } #back-to-top .icon { width:14px; height:14px; } #back-to-top:hover { color:var(--gold); }
     #toast { position:fixed; bottom:24px; left:50%; transform:translate(-50%,20px); z-index:20; width:max-content; max-width:calc(100% - 32px); padding:14px 20px; border:1px solid #7baf6a77; border-radius:12px; background:#153e2c; box-shadow:0 12px 35px #0007; color:#e7f5e9; font-size:12px; text-align:center; opacity:0; visibility:hidden; transition:opacity .2s,transform .2s,visibility .2s; pointer-events:none; } #toast.is-visible { opacity:1; visibility:visible; transform:translate(-50%,0); }
-    #banner-tools { max-width:900px; margin:20px auto; background:#0a2a1f; padding:15px 18px; border:1px solid var(--line); border-radius:12px; color:#cbd5e1; font-size:12px; } #banner-tools summary { cursor:pointer; color:#ead375; } #banner-tools p { font-size:11px; } #banner-upload { display:block; max-width:100%; margin:10px 0; } #banner-upload::file-selector-button { background:#174831; color:#fff; border:1px solid #4b7558; border-radius:5px; padding:8px; margin-right:10px; cursor:pointer; }
     dialog { width:min(90vw,460px); color:#fff; background:#0b2b1d; border:1px solid #8d9b4a; border-radius:16px; padding:24px; box-shadow:0 20px 70px #0009; } dialog::backdrop { background:#0009; backdrop-filter:blur(4px); } dialog h2 { margin-top:0; font-size:20px; } dialog p { font-size:13px; color:#cbd5e1; } dialog input { width:100%; background:#03180f; color:white; border:1px solid #78967d; border-radius:7px; padding:12px; margin:8px 0 16px; }
-    .reveal { animation:fadeInUp .65s cubic-bezier(.2,.65,.3,1) backwards; animation-delay:var(--delay,0ms); }
     @keyframes fadeInUp { from { opacity:0; transform:translateY(16px); } to { opacity:1; transform:translateY(0); } } @keyframes blink { 50% { opacity:0; } } @keyframes pulse { 50% { box-shadow:0 0 9px #ffe486aa; } }
-    .motion-paused { scroll-behavior:auto; } .motion-paused *, .motion-paused *::before { animation:none !important; transition:none !important; } .motion-paused .cursor { display:none; } .motion-paused .link-card:hover,.motion-paused .action:hover,.motion-paused .channel-link:hover .card-arrow { transform:none; }
-    @media (prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } *,*::before,*::after { animation:none !important; transition:none !important; } .cursor { display:none; } .link-card:hover,.action:hover,.channel-link:hover .card-arrow { transform:none; } }
     @media (max-width:760px) { .page-shell { width:calc(100% - 32px); } .masthead { min-height:65px; } .banner-wrap { border-radius:14px; } .intro { margin-top:27px; margin-bottom:24px; } h1 { font-size:clamp(29px,5.8vw,42px); } #social-links { grid-template-columns:1fr; gap:10px; } .link-card { min-height:91px; } .channel-title { font-size:15px; } .channel-subtitle { font-size:11px; } .channel-link { padding:16px; } .copy-link { min-width:65px; } .type-line { font-size:12px; max-width:450px; min-height:62px; } .featured { min-height:110px; } .share-card { margin-top:23px; padding:25px 18px; } .share-card h2 { font-size:18px; } .share-card p { font-size:11px; } .footer-name { font-size:11px; } }
-    @media (max-width:420px) { .page-shell { width:calc(100% - 24px); } .masthead-label { font-size:8px; letter-spacing:.11em; } .wordmark strong { font-size:13px; } .wordmark em { margin-left:4px; } .wordmark { gap:8px; } .foundation { font-size:9px; padding:7px 9px; gap:5px; } h1 { font-size:30px; line-height:1.18; margin-top:19px; } .intro { margin-bottom:18px; } .section-heading h2 { font-size:9px; letter-spacing:.12em; } .section-heading span { font-size:9px; } .channel-link { padding:15px 11px; gap:11px; } .platform-icon { width:40px; height:40px; border-radius:11px; } .platform-icon .icon { width:22px; height:22px; } .channel-title { font-size:13px; } .channel-subtitle { font-size:9px; } .card-arrow { width:13px; height:13px; } .copy-link { min-width:54px; padding-inline:6px; } .copy-link span { font-size:7px; } .featured .channel-link { padding:17px 12px; gap:12px; } .featured .platform-icon { width:45px; height:45px; } .featured .channel-title { font-size:19px; } .featured .channel-subtitle { font-size:9px; } .featured .copy-link { padding-inline:9px; } .featured .card-arrow { width:18px; height:18px; } .share-actions { flex-direction:column; } .action { width:100%; } .footer-bottom { align-items:center; font-size:8px; } }
+    @media (max-width:420px) { .page-shell { width:calc(100% - 24px); } .masthead-label { font-size:8px; letter-spacing:.11em; } .foundation { font-size:9px; padding:7px 9px; gap:5px; } h1 { font-size:30px; line-height:1.18; margin-top:19px; } .intro { margin-bottom:18px; } .section-heading h2 { font-size:9px; letter-spacing:.12em; } .section-heading span { font-size:9px; } .channel-link { padding:15px 11px; gap:11px; } .platform-icon { width:40px; height:40px; border-radius:11px; } .platform-icon .icon { width:22px; height:22px; } .channel-title { font-size:13px; } .channel-subtitle { font-size:9px; } .card-arrow { width:13px; height:13px; } .copy-link { min-width:54px; padding-inline:6px; } .copy-link span { font-size:7px; } .featured .channel-link { padding:17px 12px; gap:12px; } .featured .platform-icon { width:45px; height:45px; } .featured .channel-title { font-size:19px; } .featured .channel-subtitle { font-size:9px; } .featured .copy-link { padding-inline:9px; } .featured .card-arrow { width:18px; height:18px; } .share-actions { flex-direction:column; } .action { width:100%; } .footer-bottom { align-items:center; font-size:8px; } }
+
+    /* Identidade brasileira: arte de fundo estática, animação nos elementos da página. */
+    body { isolation:isolate; background:radial-gradient(ellipse at 0 25%,#0b3a26 0,transparent 45%),radial-gradient(ellipse at 100% 12%,#102e56 0,transparent 42%),#03180f; }
+    .patriotic-backdrop { position:fixed; inset:0; width:100%; height:100%; z-index:-1; pointer-events:none; }
+    .masthead { min-height:78px; }
+    .masthead-label { font-size:10px; letter-spacing:.17em; }
+    #toggle-motion { width:auto; min-height:42px; padding:8px 12px; display:inline-flex; align-items:center; gap:8px; font-size:12px; color:#c3d5c7; background:#12392466; border-color:#91ad6240; }
+    #toggle-motion > span:first-child { width:16px; font-size:11px; }
+    .intro { margin:44px auto 38px; perspective:1000px; }
+    .foundation { font-size:13px; padding:10px 16px; }
+    h1 { font-size:clamp(32px,4.5vw,52px); line-height:1.18; margin:25px 0; }
+    .type-line { position:relative; align-items:center; min-height:98px; max-width:730px; padding:18px 24px; color:#f5e8af; font-size:19px; font-weight:500; line-height:1.55; border:1px solid #d4b84050; border-radius:14px; background:linear-gradient(110deg,#7d67132b,#12634129 65%,#0e353d50); box-shadow:0 8px 32px #0002,inset 3px 0 0 #d6b939; }
+    .type-copy { min-height:58px; display:block; align-content:center; padding:0; }
+    .section-heading { margin:0 0 20px; padding:17px 20px; border:1px solid #6a9a5950; border-radius:12px; background:linear-gradient(110deg,#1c512e88,#1a39272b); box-shadow:inset 3px 0 #d9bc40; }
+    .section-heading h2 { font-size:15px; text-transform:none; letter-spacing:0; color:#e8eace; }
+    .section-heading span { font-size:11px; color:#bfd0be; white-space:nowrap; }
+    .section-heading::after { display:none; }
+    footer { position:relative; margin-top:46px; padding:38px 0 26px; border-top:1px solid #91b17340; background:radial-gradient(ellipse at 50% 0,#18753e1a,transparent 75%); }
+    footer::before { content:""; position:absolute; top:-2px; left:25%; right:25%; height:3px; background:linear-gradient(90deg,#159350 0 50%,#f5c518 50%); }
+    .footer-name { font-size:20px; line-height:1.5; max-width:650px; margin:0 auto 13px; }
+    .footer-location { font-size:15px; color:#c5d7c7; line-height:1.8; }
+    .motto { font-size:14px; line-height:1.8; color:#a6c1ac; margin:14px 0 29px; }
+    .footer-bottom { padding:22px 0 0; text-align:left; font-size:13px; color:#a8bfb0; line-height:1.85; }
+    #back-to-top { font-size:13px; white-space:nowrap; }
+    .footer-ribbons { height:14px; margin-top:18px; background:linear-gradient(180deg,#11934b 0 50%,#f5c518 50%); }
+    .scroll-motion .reveal[data-reveal-state="waiting"] { opacity:0; transform:translate3d(0,36px,0) scale(.97); }
+    .scroll-motion .depth-reveal[data-reveal-state="waiting"] { transform:perspective(900px) translate3d(0,36px,-160px) rotateX(8deg); }
+    .reveal.is-entering { animation:scrollEntrance .75s cubic-bezier(.16,1,.3,1) var(--reveal-delay,0ms) backwards; }
+    .depth-reveal.is-entering { animation-name:depthEntrance; animation-duration:1.15s; }
+    @keyframes scrollEntrance { from { opacity:0; transform:translate3d(0,36px,0) scale(.97); } to { opacity:1; transform:translate3d(0,0,0) scale(1); } }
+    @keyframes depthEntrance { from { opacity:0; transform:perspective(900px) translate3d(0,36px,-160px) rotateX(8deg); filter:blur(5px); } to { opacity:1; transform:perspective(900px) translate3d(0,0,0) rotateX(0); filter:blur(0); } }
+    .motion-paused { scroll-behavior:auto; }
+    .motion-paused *, .motion-paused *::before, .motion-paused *::after { animation:none !important; transition:none !important; }
+    .motion-paused .reveal { opacity:1 !important; transform:none !important; filter:none !important; }
+    .motion-paused .cursor { display:none; }
+    .motion-paused .link-card:hover,.motion-paused .action:hover,.motion-paused .channel-link:hover .card-arrow { transform:none; }
+    @media (max-width:760px) { .masthead { min-height:70px; } .intro { margin:32px auto; } h1 { font-size:clamp(31px,6vw,45px); } .type-line { font-size:17px; padding:16px 19px; min-height:102px; } .footer-name { font-size:19px; } .footer-location { font-size:14px; } .footer-bottom { font-size:12px; } .section-heading h2 { font-size:14px; } }
+    @media (max-width:420px) { .masthead-label { font-size:8px; letter-spacing:.07em; } #toggle-motion { font-size:10px; padding:7px 8px; gap:4px; } .foundation { font-size:10px; padding:9px 10px; } .foundation .icon { width:13px; height:13px; } h1 { font-size:31px; } .type-line { font-size:16px; min-height:110px; padding:17px 16px; } .type-copy { min-height:74px; } .section-heading { padding:14px; gap:12px; } .section-heading h2 { font-size:14px; line-height:1.5; } .section-heading span { font-size:10px; } .footer-name { font-size:18px; } .footer-location { font-size:14px; } .motto { font-size:13px; } .footer-bottom { flex-direction:column; text-align:center; gap:10px; font-size:12px; } #back-to-top { padding:8px; } }
+    @media (prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } *,*::before,*::after { animation:none !important; transition:none !important; } .reveal { opacity:1 !important; transform:none !important; filter:none !important; } .cursor { display:none; } .link-card:hover,.action:hover,.channel-link:hover .card-arrow { transform:none; } }
+    @media print { .reveal { opacity:1 !important; transform:none !important; animation:none !important; } .patriotic-backdrop,#toggle-motion,#replay-banner { display:none !important; } }
+    /* Banner: HTML legível e bandeira formada por camadas vetoriais. */
+    .banner-wrap { display:grid; grid-template-columns:1.08fr 1fr; align-items:center; gap:0; min-height:475px; aspect-ratio:auto; padding:44px 36px 48px 46px; isolation:isolate; background:radial-gradient(ellipse at 83% 42%,#13614765,transparent 61%),linear-gradient(115deg,#062e20,#062c24 58%,#092343); border-color:#85a55a55; border-radius:22px; overflow:hidden; position:relative; }
+    .banner-wrap::before { content:""; position:absolute; inset:0; z-index:-1; background:linear-gradient(125deg,transparent 42%,#b2c74c07 42%,#b2c74c07 42.2%,transparent 42.2%),repeating-linear-gradient(90deg,#cfead503 0 1px,transparent 1px 64px); pointer-events:none; }
+    .hero-copy { position:relative; z-index:2; min-width:0; perspective:900px; }
+    .hero-kicker { display:flex; align-items:center; gap:9px; margin:0 0 24px; color:#bbd8c5; font-size:10px; font-weight:600; letter-spacing:.13em; text-transform:uppercase; }
+    .hero-kicker>span { display:block; width:24px; height:3px; flex:none; background:var(--gold); }
+    #banner-title { font-family:Montserrat,Inter,sans-serif; font-size:clamp(37px,4.7vw,58px); font-weight:900; line-height:1.08; letter-spacing:-.055em; margin:0 0 20px; }
+    .hero-line { display:block; transform-origin:50% 100%; }
+    .hero-line em { display:block; color:#f8d445; font-style:normal; }
+    .hero-description { margin:0; color:#c2d7c9; font-size:14px; line-height:1.85; }
+    .hero-origin { display:flex; align-items:center; gap:14px; margin-top:29px; }
+    .hero-origin-rule { flex:none; height:39px; width:3px; background:linear-gradient(#28be75 50%,#f5c518 50%); border-radius:3px; }
+    .hero-origin strong,.hero-origin div>span { display:block; }
+    .hero-origin strong { color:#f0e7b6; font-size:14px; font-weight:600; line-height:1.6; }
+    .hero-origin div>span { color:#a8c5b5; font-size:12px; margin-top:2px; }
+    .hero-art { width:calc(100% + 40px); margin-left:-24px; position:relative; min-width:0; align-self:center; }
+    #banner-visual { display:block; width:100%; height:auto; overflow:visible; filter:drop-shadow(0 20px 20px #0003); }
+    .hero-art-caption { display:flex; align-items:center; justify-content:center; gap:8px; color:#b9d1bf; font-size:10px; font-weight:500; letter-spacing:.19em; margin-top:-15px; }
+    .hero-art-caption span { width:5px; height:5px; flex:none; background:#f5d44e; border-radius:50%; }
+    .hero-replay { position:absolute; right:22px; bottom:20px; display:flex; align-items:center; gap:7px; min-height:34px; padding:7px 10px; border:1px solid #b8d0b12b; border-radius:7px; color:#c4d6ca; background:#06271d80; font-size:10px; z-index:3; transition:background .2s,color .2s; }
+    .hero-replay svg { width:14px; height:14px; }
+    .hero-replay:hover { color:#ffe38a; background:#244633; }
+    .hero-ribbons { position:absolute; bottom:0; left:0; right:0; display:flex; height:5px; }
+    .hero-ribbons span:first-child { width:64%; background:linear-gradient(90deg,#087944,#20be6f); }
+    .hero-ribbons span:last-child { flex:1; background:linear-gradient(90deg,#f7dc59,#deb126); }
+    .flag-field,.flag-diamond,.flag-disc,.flag-band,.flag-stars,.justice-medallion { transform-box:fill-box; transform-origin:center; }
+    .flag-shimmer { opacity:0; }
+    .flag-trace,.justice-ink path { stroke-dasharray:1; stroke-dashoffset:0; }
+    .hero-playing .hero-kicker { animation:hero-copy-in .8s .12s both; }
+    .hero-playing .hero-line { animation:hero-title-in 1.15s cubic-bezier(.18,.65,.18,1) both; }
+    .hero-playing .hero-line:first-child { animation-delay:.25s; }
+    .hero-playing .hero-line:nth-child(2) { animation-delay:.52s; }
+    .hero-playing .hero-description { animation:hero-copy-in .9s .9s both; }
+    .hero-playing .hero-origin { animation:hero-copy-in .9s 1.15s both; }
+    .hero-playing .flag-field { animation:flag-field-in 1.1s cubic-bezier(.2,.7,.25,1) .15s both; }
+    .hero-playing .flag-diamond { animation:flag-diamond-in 1.2s cubic-bezier(.2,.75,.15,1) .65s both; }
+    .hero-playing .flag-disc { animation:flag-disc-in 1s cubic-bezier(.18,.85,.2,1.1) 1.1s both; }
+    .hero-playing .flag-band { animation:flag-band-in .85s ease-out 1.65s both; }
+    .hero-playing .flag-stars { animation:flag-disc-in 1s ease-out 2s both; }
+    .hero-playing .flag-trace { animation:hero-draw 1.6s ease-in-out .2s both; }
+    .hero-playing .justice-medallion { animation:justice-in .9s cubic-bezier(.18,.85,.2,1.1) 1.7s both; }
+    .hero-playing .justice-ink path { animation:hero-draw 1.1s ease-out 2.05s both; }
+    .hero-playing .hero-art-caption { animation:hero-copy-in .8s 2.25s both; }
+    .hero-playing .flag-shimmer { animation:flag-light 7s ease-in-out 3s infinite; }
+    @keyframes hero-copy-in { from { opacity:0; transform:translateY(15px); } to { opacity:1; transform:translateY(0); } }
+    @keyframes hero-title-in { from { opacity:0; filter:blur(8px); transform:translate3d(0,50px,-150px) rotateX(18deg); } to { opacity:1; filter:blur(0); transform:translate3d(0,0,0) rotateX(0); } }
+    @keyframes flag-field-in { from { opacity:0; clip-path:inset(0 100% 0 0); transform:translateX(-18px); } to { opacity:1; clip-path:inset(0); transform:translateX(0); } }
+    @keyframes flag-diamond-in { from { opacity:0; transform:rotate(-35deg) scale(.2); } to { opacity:1; transform:rotate(0) scale(1); } }
+    @keyframes flag-disc-in { from { opacity:0; transform:scale(.4); } to { opacity:1; transform:scale(1); } }
+    @keyframes flag-band-in { from { opacity:0; clip-path:inset(0 100% 0 0); } to { opacity:1; clip-path:inset(0); } }
+    @keyframes justice-in { from { opacity:0; transform:translateY(24px) scale(.8); } to { opacity:1; transform:translateY(0) scale(1); } }
+    @keyframes hero-draw { from { stroke-dashoffset:1; } to { stroke-dashoffset:0; } }
+    @keyframes flag-light { 0%,15% { opacity:0; transform:translateX(0); } 20% { opacity:1; } 45%,100% { opacity:0; transform:translateX(730px); } }
+    .motion-paused .banner-wrap *, .motion-paused .banner-wrap *::before { animation:none !important; transition:none !important; }
+    @media (prefers-reduced-motion:reduce) { .banner-wrap *, .banner-wrap *::before { animation:none !important; transition:none !important; } }
+    @media (max-width:900px) and (min-width:761px) { .banner-wrap { padding:35px 25px; min-height:450px; } #banner-title { font-size:43px; } .hero-kicker { font-size:9px; } .hero-description { font-size:13px; } .hero-origin strong { font-size:13px; } .hero-art { width:calc(100% + 28px); margin-left:-14px; } }
+    @media (max-width:760px) { .banner-wrap { grid-template-columns:1fr; gap:12px; padding:30px 26px 58px; min-height:0; border-radius:17px; } .hero-copy { text-align:left; } .hero-kicker { margin-bottom:18px; font-size:9px; letter-spacing:.12em; } #banner-title { font-size:clamp(37px,7.8vw,52px); margin-bottom:16px; } .hero-line em { display:inline; } .hero-description { font-size:13px; } .hero-origin { margin-top:21px; } .hero-origin strong { font-size:14px; } .hero-origin div>span { font-size:12px; } .hero-art { width:min(100%,470px); margin:-6px auto 0; } .hero-art-caption { font-size:9px; margin-top:-16px; } .hero-replay { bottom:17px; right:19px; } }
+    @media (max-width:420px) { .banner-wrap { padding:25px 20px 56px; } .hero-kicker { font-size:8px; letter-spacing:.09em; gap:8px; } .hero-kicker>span { width:17px; } #banner-title { font-size:38px; } .hero-line em { display:block; } .hero-description { font-size:12px; } .hero-origin strong { font-size:13px; } .hero-art { width:calc(100% + 20px); margin-left:-10px; } }
+
+    .hero-replay:disabled { opacity:.5; cursor:default; }
   </style>
 </head>
 <body id="topo">
   <a class="skip-link" href="#canais">Ir para os canais</a>
+  <svg class="patriotic-backdrop" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid slice" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+    <defs><linearGradient id="ribbon-green" x2="1" y2="1"><stop stop-color="#158449" stop-opacity=".25"/><stop offset="1" stop-color="#158449" stop-opacity="0"/></linearGradient><linearGradient id="ribbon-gold" x2="1" y2="1"><stop stop-color="#f5c518" stop-opacity=".16"/><stop offset="1" stop-color="#f5c518" stop-opacity="0"/></linearGradient></defs>
+    <path d="M-450 400 80-180 510 210-20 790Z" fill="url(#ribbon-green)"/><path d="M-390 480 80-100 440 230-30 810Z" fill="none" stroke="#f5c518" stroke-opacity=".1" stroke-width="2"/>
+    <path d="m1350 270 520 390-520 390-520-390Z" fill="none" stroke="#f5c518" stroke-opacity=".09" stroke-width="2"/><circle cx="1350" cy="660" r="205" fill="#234883" fill-opacity=".08"/>
+    <path d="M-100 940Q650 260 1700 640L1700 710Q650 360-100 1010Z" fill="url(#ribbon-green)"/><path d="M-100 1020Q650 340 1700 720L1700 740Q650 380-100 1040Z" fill="url(#ribbon-gold)"/>
+    <g fill="#e3d483" fill-opacity=".23"><path d="m1450 145 4 12 13 1-10 8 3 12-10-7-11 7 4-12-10-8 13-1Z"/><path d="m1340 270 3 9 10 1-8 6 3 10-8-6-9 6 3-10-8-6 10-1Z"/><circle cx="1492" cy="327" r="3"/><circle cx="1270" cy="193" r="2"/></g>
+    <g transform="translate(80 650)" fill="none" stroke="#9bbd97" stroke-opacity=".13" stroke-width="2"><path d="M0 140h140M70 140V0M10 30h120M10 30-15 90h50L10 30ZM130 30l-25 60h50l-25-60Z"/><path d="M-15 90q25 35 50 0M105 90q25 35 50 0"/><circle cx="70" cy="13" r="10"/></g>
+  </svg>
   <div class="page-shell">
     <header>
-      <div class="masthead reveal">
-        <a class="wordmark" href="#topo" aria-label="PCC Paraná — início"><span class="flag-mark" aria-hidden="true"><i></i><i></i><i></i></span><strong>PCC<em>PARANÁ</em></strong></a>
+      <div class="masthead">
         <span class="masthead-label"><span class="status-dot" aria-hidden="true"></span> NOSSOS CANAIS OFICIAIS</span>
+        <button id="toggle-motion" type="button" aria-label="Pausar animações" aria-pressed="false" title="Pausar animações" hidden><span aria-hidden="true">Ⅱ</span><span class="motion-label">Pausar animações</span></button>
       </div>
-      <div class="banner-wrap reveal" style="--delay:60ms">
-        <!-- Arte vetorial de reserva. O arquivo banner.png, quando presente, aparece sobre ela. -->
-        <svg id="banner-fallback" viewBox="0 0 1400 600" role="img" aria-label="O poder emana do povo. Pela justiça, pela transparência, pelo Brasil." xmlns="http://www.w3.org/2000/svg">
-          <defs>
-            <linearGradient id="landscape" x2="1" y2="1"><stop stop-color="#073f2a"/><stop offset=".6" stop-color="#082b28"/><stop offset="1" stop-color="#102c50"/></linearGradient>
-            <linearGradient id="gold" x2="1" y2=".5"><stop stop-color="#ffe670"/><stop offset="1" stop-color="#d1a523"/></linearGradient>
-            <radialGradient id="light"><stop stop-color="#9fbb45" stop-opacity=".22"/><stop offset="1" stop-color="#9fbb45" stop-opacity="0"/></radialGradient>
-            <pattern id="lines" width="46" height="46" patternUnits="userSpaceOnUse"><path d="M46 0H0V46" fill="none" stroke="#bbd8bc" stroke-opacity=".06"/></pattern>
-          </defs>
-          <path fill="url(#landscape)" d="M0 0h1400v600H0z"/><path fill="url(#lines)" d="M0 0h1400v600H0z"/><ellipse cx="430" cy="280" rx="760" ry="500" fill="url(#light)"/>
-          <g fill="none" stroke="#f5c518"><path d="m1020 5 500 300-500 300-500-300Z" opacity=".19"/><path d="m1020 72 390 233-390 233-390-233Z" opacity=".1"/><circle cx="1020" cy="305" r="154" opacity=".14"/><path d="M873 261q138-17 291 91" opacity=".16"/></g>
-          <g fill="#fff" opacity=".65"><path d="m1110 220 3 8 9 1-7 5 2 8-7-4-7 4 2-8-7-5 9-1Z"/><path d="m1020 360 2 6 7 1-5 4 2 6-6-4-6 4 2-6-5-4 7-1Z"/><circle cx="963" cy="280" r="3"/><circle cx="1080" cy="310" r="3"/><circle cx="1003" cy="233" r="3"/></g>
-          <path d="M0 575h1400v25H0Z" fill="#03180f" opacity=".6"/><path d="M0 575h1400" stroke="#91b36d" stroke-opacity=".2"/>
-          <path d="M76 113h51" stroke="#f5c518" stroke-width="5"/>
-          <text x="76" y="158" fill="#c0d8c4" font-family="Montserrat,Arial,sans-serif" font-size="17" font-weight="600" letter-spacing="5">PARANÁ CONTRA OS CORRUPTOS</text>
-          <text x="70" y="262" fill="#fff" font-family="Montserrat,Arial,sans-serif" font-size="82" font-weight="900" letter-spacing="-3">O PODER EMANA</text>
-          <text x="70" y="359" fill="url(#gold)" font-family="Montserrat,Arial,sans-serif" font-size="102" font-weight="900" letter-spacing="-3">DO POVO.</text>
-          <text x="76" y="428" fill="#d0dfd2" font-family="Inter,Arial,sans-serif" font-size="22" letter-spacing="1">Pela justiça. Pela transparência. Pelo Brasil.</text>
-          <text x="76" y="527" fill="#a9c1b1" font-family="Inter,Arial,sans-serif" font-size="13" letter-spacing="4">CURITIBA, PARANÁ • DESDE 2014</text>
-          <g transform="translate(1135 425)" stroke="#c7cfa3" fill="none" opacity=".48" stroke-width="2"><path d="M0 100h100M50 100V0M8 20h84M8 20-9 62h34L8 20ZM92 20 75 62h34L92 20Z"/><path d="M-9 62q17 24 34 0M75 62q17 24 34 0"/><circle cx="50" cy="8" r="7"/></g>
-        </svg>
-        <img id="hero-banner" src="banner.png" width="1915" height="821" fetchpriority="high" alt="Movimento Paraná Contra os Corruptos — O poder emana do povo. Pela justiça, pela transparência e pelo Brasil." hidden>
-      </div>
-      <div class="intro reveal" style="--delay:130ms">
-        <div class="foundation"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 10c0 5-7 11-7 11S5 15 5 10a7 7 0 1 1 14 0Z"/><circle cx="12" cy="10" r="2"/></svg><span>Movimento fundado em 2014 • Curitiba, Paraná</span></div>
-        <h1>Movimento Paraná<br><span>Contra os Corruptos</span></h1>
-        <div class="type-line">
+      <section class="banner-wrap" id="animated-banner" aria-labelledby="banner-title">
+        <div class="hero-copy">
+          <p class="hero-kicker"><span></span> Justiça. Transparência. Democracia.</p>
+          <h2 id="banner-title"><span class="hero-line">O poder</span><span class="hero-line">emana <em>do povo.</em></span></h2>
+          <p class="hero-description">Nossa bandeira é o Brasil.<br>Nosso compromisso é combater a corrupção.</p>
+          <div class="hero-origin"><span class="hero-origin-rule" aria-hidden="true"></span><div><strong>De Curitiba para o Brasil</strong><span>Uma voz pela justiça desde 2014.</span></div></div>
+        </div>
+        <div class="hero-art">
+          <svg id="banner-visual" viewBox="0 0 640 500" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+            <defs>
+              <linearGradient id="hero-green" x2="1" y2="1"><stop stop-color="#159b5d"/><stop offset="1" stop-color="#04673e"/></linearGradient>
+              <linearGradient id="hero-yellow" x2="1" y2="1"><stop stop-color="#ffe975"/><stop offset="1" stop-color="#eebc1a"/></linearGradient>
+              <linearGradient id="hero-blue" x2="1" y2="1"><stop stop-color="#1a4d98"/><stop offset="1" stop-color="#071f53"/></linearGradient>
+              <linearGradient id="hero-shine"><stop stop-color="#fff" stop-opacity="0"/><stop offset=".5" stop-color="#fff" stop-opacity=".16"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
+              <linearGradient id="justice-gold" x2="1" y2="1"><stop stop-color="#fff0a3"/><stop offset="1" stop-color="#d5aa2b"/></linearGradient>
+              <clipPath id="hero-disc-clip"><circle cx="310" cy="220" r="85"/></clipPath>
+              <clipPath id="hero-field-clip"><rect x="60" y="45" width="500" height="350" rx="12"/></clipPath>
+              <path id="hero-band-text" d="M225 199Q310 190 390 246"/>
+              <symbol id="hero-star" viewBox="-5 -5 10 10"><path d="m0-5 1.2 3.5H5L2 1l1.2 3.8L0 2.6l-3.2 2.2L-2 1l-3-2.5h3.8Z" fill="#fff"/></symbol>
+            </defs>
+            <g fill="none" stroke="#d7d384" stroke-opacity=".18"><path d="m319 7 304 217-304 217L15 224Z"/><path d="m319 27 276 197-276 197L43 224Z"/><circle cx="310" cy="220" r="204" stroke-dasharray="2 12"/></g>
+            <rect x="77" y="62" width="500" height="350" rx="12" fill="#000" opacity=".2"/>
+            <rect class="flag-field" x="60" y="45" width="500" height="350" rx="12" fill="url(#hero-green)"/>
+            <path class="flag-diamond" d="m310 78 209 142-209 142-209-142Z" fill="url(#hero-yellow)"/>
+            <circle class="flag-disc" cx="310" cy="220" r="85" fill="url(#hero-blue)"/>
+            <g class="flag-band"><g clip-path="url(#hero-disc-clip)"><path d="M217 201Q310 185 398 250" fill="none" stroke="#fffdeb" stroke-width="20"/><text fill="#08763d" font-family="Arial,sans-serif" font-weight="700" font-size="9" letter-spacing="1.2"><textPath href="#hero-band-text" startOffset="15%">ORDEM E PROGRESSO</textPath></text></g></g>
+            <g class="flag-stars">
+              <use href="#hero-star" x="325" y="171" width="8" height="8"/><use href="#hero-star" x="245" y="227" width="6" height="6"/><use href="#hero-star" x="267" y="229" width="6" height="6"/><use href="#hero-star" x="287" y="249" width="8" height="8"/><use href="#hero-star" x="311" y="237" width="7" height="7"/><use href="#hero-star" x="328" y="259" width="7" height="7"/><use href="#hero-star" x="309" y="278" width="8" height="8"/><use href="#hero-star" x="288" y="269" width="6" height="6"/><use href="#hero-star" x="275" y="255" width="5" height="5"/><use href="#hero-star" x="353" y="253" width="5" height="5"/><use href="#hero-star" x="365" y="263" width="5" height="5"/><use href="#hero-star" x="343" y="281" width="5" height="5"/><use href="#hero-star" x="252" y="252" width="5" height="5"/><use href="#hero-star" x="273" y="281" width="5" height="5"/>
+            <use href="#hero-star" x="253" y="242" width="4" height="4"/><use href="#hero-star" x="262" y="266" width="4" height="4"/><use href="#hero-star" x="278" y="241" width="4" height="4"/><use href="#hero-star" x="284" y="286" width="4" height="4"/><use href="#hero-star" x="296" y="235" width="4" height="4"/><use href="#hero-star" x="299" y="260" width="4" height="4"/><use href="#hero-star" x="301" y="290" width="4" height="4"/><use href="#hero-star" x="319" y="262" width="4" height="4"/><use href="#hero-star" x="321" y="287" width="4" height="4"/><use href="#hero-star" x="336" y="244" width="4" height="4"/><use href="#hero-star" x="338" y="268" width="4" height="4"/><use href="#hero-star" x="348" y="261" width="4" height="4"/><use href="#hero-star" x="358" y="274" width="4" height="4"/></g>
+            <g clip-path="url(#hero-field-clip)"><path class="flag-shimmer" d="M-90 45H10L150 395H50Z" fill="url(#hero-shine)"/></g>
+            <rect class="flag-trace" x="60" y="45" width="500" height="350" rx="12" pathLength="1" fill="none" stroke="#b6e3a0" stroke-opacity=".45" stroke-width="1.5"/>
+            <g class="justice-medallion">
+              <circle cx="505" cy="373" r="76" fill="#062a1c" stroke="#cfb74e" stroke-opacity=".6"/>
+              <circle cx="505" cy="373" r="65" fill="none" stroke="#cfb74e" stroke-opacity=".18"/>
+              <g class="justice-ink" fill="none" stroke="url(#justice-gold)" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round">
+                <path pathLength="1" d="M505 327v80m-24 0h48m-40 8h32M465 347h80M505 334l-11 13m11-13 11 13"/>
+                <path pathLength="1" d="m465 347-17 35h34l-17-35m80 0-17 35h34l-17-35M448 382q17 23 34 0m46 0q17 23 34 0"/>
+              </g>
+              <circle cx="505" cy="326" r="4" fill="#f5d66f"/>
+            </g>
+          </svg>
+          <div class="hero-art-caption"><span></span> POR UM BRASIL MAIS JUSTO</div>
+        </div>
+        <button id="replay-banner" class="hero-replay" type="button" aria-label="Repetir animação do banner" hidden><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 10a9 9 0 1 1 2.6 8.4M3 4v6h6"/></svg><span>Ver animação</span></button>
+        <div class="hero-ribbons" aria-hidden="true"><span></span><span></span></div>
+      </section>
+      <div class="intro">
+        <div class="foundation reveal"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 10c0 5-7 11-7 11S5 15 5 10a7 7 0 1 1 14 0Z"/><circle cx="12" cy="10" r="2"/></svg><span>Movimento fundado em 2014 • Curitiba, Paraná</span></div>
+        <h1 id="main-title" class="reveal depth-reveal">Movimento Paraná<br><span>Contra os Corruptos</span></h1>
+        <div class="type-line reveal">
           <span class="sr-only">Acompanhe nosso conteúdo na internet. Pela justiça, transparência e defesa da democracia.</span>
           <span class="type-copy" aria-hidden="true"><span id="typewriter">Acompanhe nosso conteúdo na internet.</span><span class="cursor"></span></span>
-          <button id="toggle-motion" type="button" aria-label="Pausar animações" aria-pressed="false" title="Pausar animações" hidden><span aria-hidden="true">Ⅱ</span></button>
         </div>
       </div>
     </header>
     <main class="content" id="canais">
-      <div class="section-heading reveal" style="--delay:180ms"><h2>Acompanhe nosso conteúdo na internet</h2><span>09 canais</span></div>
+      <div class="section-heading reveal"><h2>Acompanhe nosso conteúdo na internet</h2><span>09 canais</span></div>
       <section id="social-links" aria-label="Site e redes sociais do movimento">
-        <article class="link-card site featured reveal" style="--delay: 160ms">
+        <article class="link-card site featured reveal">
           <a class="channel-link" href="https://www.paranacontraoscorruptos.org" target="_blank" rel="noopener noreferrer" aria-label="Site Oficial — abre em nova aba">
             <span class="platform-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a19 19 0 0 1 0 18 19 19 0 0 1 0-18Z"/></svg></span>
             <span class="channel-copy"><span class="featured-badge"><span></span> NOSSO PORTAL</span><span class="channel-title">Site Oficial</span><span class="channel-subtitle">paranacontraoscorruptos.org</span></span>
@@ -119,7 +240,7 @@
           </a>
           <button class="copy-link" type="button" data-url="https://www.paranacontraoscorruptos.org" aria-label="Copiar link: Site Oficial" title="Copiar link"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="8" y="8" width="12" height="13" rx="2"/><path d="M16 8V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h3"/></svg><span>Copiar link</span></button>
         </article>
-        <article class="link-card whatsapp  reveal" style="--delay: 215ms">
+        <article class="link-card whatsapp  reveal">
           <a class="channel-link" href="https://whatsapp.com/channel/0029VbEAb6wDuMRZRk6jsn2S" target="_blank" rel="noopener noreferrer" aria-label="Canal no WhatsApp — abre em nova aba">
             <span class="platform-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.5 11.7a8.5 8.5 0 0 1-12.6 7.5L3 20.5l1.3-4.8A8.5 8.5 0 1 1 20.5 11.7Z"/><path d="M8.1 7.6c-.8 1-.3 3.2 1.7 5.3s4.4 2.9 5.7 2l.8-1.4-2.8-1.3-.8 1c-1.3-.5-2.5-1.7-3-2.9l.8-.8-1.3-2.6Z"/></svg></span>
             <span class="channel-copy"><span class="channel-title">Canal no WhatsApp</span><span class="channel-subtitle">Receba atualizações em tempo real</span></span>
@@ -127,7 +248,7 @@
           </a>
           <button class="copy-link" type="button" data-url="https://whatsapp.com/channel/0029VbEAb6wDuMRZRk6jsn2S" aria-label="Copiar link: Canal no WhatsApp" title="Copiar link"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="8" y="8" width="12" height="13" rx="2"/><path d="M16 8V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h3"/></svg><span>Copiar link</span></button>
         </article>
-        <article class="link-card telegram  reveal" style="--delay: 270ms">
+        <article class="link-card telegram  reveal">
           <a class="channel-link" href="https://t.me/+gmizrDlU5FZmZTkx" target="_blank" rel="noopener noreferrer" aria-label="Canal no Telegram — abre em nova aba">
             <span class="platform-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m21 4-4 16-5.8-4.4-3.1 2.9.6-5.7L18 6.6 6.9 11.7 3 10.4Z"/><path d="m8.7 12.8 2.5 2.8"/></svg></span>
             <span class="channel-copy"><span class="channel-title">Canal no Telegram</span><span class="channel-subtitle">Comunidade e notícias diretas</span></span>
@@ -135,7 +256,7 @@
           </a>
           <button class="copy-link" type="button" data-url="https://t.me/+gmizrDlU5FZmZTkx" aria-label="Copiar link: Canal no Telegram" title="Copiar link"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="8" y="8" width="12" height="13" rx="2"/><path d="M16 8V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h3"/></svg><span>Copiar link</span></button>
         </article>
-        <article class="link-card youtube  reveal" style="--delay: 325ms">
+        <article class="link-card youtube  reveal">
           <a class="channel-link" href="https://www.youtube.com/@Paranácontraoscorruptos" target="_blank" rel="noopener noreferrer" aria-label="Canal no YouTube — abre em nova aba">
             <span class="platform-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="5" width="19" height="14" rx="4"/><path d="m10 9 5 3-5 3Z" fill="currentColor" stroke="none"/></svg></span>
             <span class="channel-copy"><span class="channel-title">Canal no YouTube</span><span class="channel-subtitle">@Paranácontraoscorruptos</span></span>
@@ -143,7 +264,7 @@
           </a>
           <button class="copy-link" type="button" data-url="https://www.youtube.com/@Paranácontraoscorruptos" aria-label="Copiar link: Canal no YouTube" title="Copiar link"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="8" y="8" width="12" height="13" rx="2"/><path d="M16 8V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h3"/></svg><span>Copiar link</span></button>
         </article>
-        <article class="link-card instagram  reveal" style="--delay: 380ms">
+        <article class="link-card instagram  reveal">
           <a class="channel-link" href="https://www.instagram.com/paranacontraoscorruptos" target="_blank" rel="noopener noreferrer" aria-label="Instagram — abre em nova aba">
             <span class="platform-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></span>
             <span class="channel-copy"><span class="channel-title">Instagram</span><span class="channel-subtitle">@paranacontraoscorruptos</span></span>
@@ -151,7 +272,7 @@
           </a>
           <button class="copy-link" type="button" data-url="https://www.instagram.com/paranacontraoscorruptos" aria-label="Copiar link: Instagram" title="Copiar link"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="8" y="8" width="12" height="13" rx="2"/><path d="M16 8V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h3"/></svg><span>Copiar link</span></button>
         </article>
-        <article class="link-card facebook  reveal" style="--delay: 435ms">
+        <article class="link-card facebook  reveal">
           <a class="channel-link" href="https://www.facebook.com/share/19sVgxHcax/" target="_blank" rel="noopener noreferrer" aria-label="Página no Facebook — abre em nova aba">
             <span class="platform-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 21v-8h3l.5-4H14V7c0-1 .4-1.5 1.5-1.5H18V2.2c-.6-.1-1.7-.2-3-.2-3 0-5 1.8-5 5v2H7v4h3v8"/></svg></span>
             <span class="channel-copy"><span class="channel-title">Página no Facebook</span><span class="channel-subtitle">Curta e acompanhe nossas publicações</span></span>
@@ -159,7 +280,7 @@
           </a>
           <button class="copy-link" type="button" data-url="https://www.facebook.com/share/19sVgxHcax/" aria-label="Copiar link: Página no Facebook" title="Copiar link"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="8" y="8" width="12" height="13" rx="2"/><path d="M16 8V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h3"/></svg><span>Copiar link</span></button>
         </article>
-        <article class="link-card facebook  reveal" style="--delay: 490ms">
+        <article class="link-card facebook  reveal">
           <a class="channel-link" href="https://www.facebook.com/groups/518450788618734" target="_blank" rel="noopener noreferrer" aria-label="Grupo no Facebook — abre em nova aba">
             <span class="platform-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3"/><path d="M3 21v-3a6 6 0 0 1 12 0v3M16 5a3 3 0 0 1 0 6M18 15a5 5 0 0 1 3 4v2"/></svg></span>
             <span class="channel-copy"><span class="channel-title">Grupo no Facebook</span><span class="channel-subtitle">Participe dos debates da comunidade</span></span>
@@ -167,7 +288,7 @@
           </a>
           <button class="copy-link" type="button" data-url="https://www.facebook.com/groups/518450788618734" aria-label="Copiar link: Grupo no Facebook" title="Copiar link"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="8" y="8" width="12" height="13" rx="2"/><path d="M16 8V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h3"/></svg><span>Copiar link</span></button>
         </article>
-        <article class="link-card twitter  reveal" style="--delay: 545ms">
+        <article class="link-card twitter  reveal">
           <a class="channel-link" href="https://x.com/prcontracorrup" target="_blank" rel="noopener noreferrer" aria-label="Twitter / X — abre em nova aba">
             <span class="platform-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 3h4.5L20 21h-4.5ZM20 3l-6.8 7.5M4 21l6.8-7.5"/></svg></span>
             <span class="channel-copy"><span class="channel-title">Twitter / X</span><span class="channel-subtitle">@prcontracorrup</span></span>
@@ -175,7 +296,7 @@
           </a>
           <button class="copy-link" type="button" data-url="https://x.com/prcontracorrup" aria-label="Copiar link: Twitter / X" title="Copiar link"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="8" y="8" width="12" height="13" rx="2"/><path d="M16 8V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h3"/></svg><span>Copiar link</span></button>
         </article>
-        <article class="link-card tiktok  reveal" style="--delay: 600ms">
+        <article class="link-card tiktok  reveal">
           <a class="channel-link" href="https://www.tiktok.com/@paranacontraoscorruptos" target="_blank" rel="noopener noreferrer" aria-label="TikTok — abre em nova aba">
             <span class="platform-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3v12.5a4.5 4.5 0 1 1-4-4.5M14 3c.6 3 2.6 5 6 5v4a10 10 0 0 1-6-2"/></svg></span>
             <span class="channel-copy"><span class="channel-title">TikTok</span><span class="channel-subtitle">@paranacontraoscorruptos</span></span>
@@ -184,7 +305,7 @@
           <button class="copy-link" type="button" data-url="https://www.tiktok.com/@paranacontraoscorruptos" aria-label="Copiar link: TikTok" title="Copiar link"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="8" y="8" width="12" height="13" rx="2"/><path d="M16 8V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h3"/></svg><span>Copiar link</span></button>
         </article>
       </section>
-      <section class="share-card reveal" style="--delay:680ms" aria-labelledby="share-title">
+      <section class="share-card reveal" aria-labelledby="share-title">
         <div class="share-eyebrow"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="m8.6 10.5 6.8-4M8.6 13.5l6.8 4"/></svg> JUNTOS, NOSSA VOZ VAI MAIS LONGE</div>
         <h2 id="share-title">Fortaleça nossa voz! Compartilhe esta página</h2>
         <p>Ajude a levar informação, justiça e transparência<br class="desktop-break"> para mais brasileiros.</p>
@@ -194,20 +315,14 @@
         </div>
       </section>
     </main>
-    <footer class="reveal" style="--delay:740ms">
-      <p class="footer-name">Movimento Paraná Contra os Corruptos — PCC Paraná</p>
-      <p class="footer-location">📍 Curitiba, Paraná — Brasil | Fundado em 2014</p>
-      <p class="motto">Pela ética, justiça, transparência e defesa da democracia</p>
-      <div class="footer-bottom"><span>© <span id="year">2026</span> PCC Paraná. Todos os direitos reservados.</span><a id="back-to-top" href="#topo">Voltar ao topo <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5m-5 5 5-5 5 5"/></svg></a></div>
+    <footer>
+      <p class="footer-name reveal">Movimento Paraná Contra os Corruptos</p>
+      <p class="footer-location reveal">📍 Curitiba, Paraná — Brasil | Fundado em 2014</p>
+      <p class="motto reveal">Pela ética, justiça, transparência e defesa da democracia</p>
+      <div class="footer-bottom reveal"><span>© <span id="year">2026</span> Movimento Paraná Contra os Corruptos.<br>Todos os direitos reservados.</span><a id="back-to-top" href="#topo">Voltar ao topo <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5m-5 5 5-5 5 5"/></svg></a></div>
     </footer>
-    <details id="banner-tools" hidden>
-      <summary>Visualizar outro banner</summary>
-      <p>Escolha uma imagem para visualizar neste dispositivo. A prévia não altera a página publicada.</p>
-      <label for="banner-upload">Imagem do banner (PNG, JPG ou WebP)</label>
-      <input id="banner-upload" type="file" accept="image/png,image/jpeg,image/webp">
-      <p id="banner-preview-status" role="status"></p>
-    </details>
   </div>
+  <div class="footer-ribbons" aria-hidden="true"></div>
   <div id="toast" role="status" aria-live="polite" aria-atomic="true"></div>
   <dialog id="copy-dialog" aria-labelledby="copy-title">
     <h2 id="copy-title">Copiar link</h2>
@@ -321,8 +436,11 @@
         motionButton.setAttribute('aria-label', paused ? 'Retomar animações' : 'Pausar animações');
         motionButton.title = paused ? 'Retomar animações' : 'Pausar animações';
         motionButton.firstElementChild.textContent = paused ? '▶' : 'Ⅱ';
+        motionButton.querySelector('.motion-label').textContent = paused ? 'Retomar animações' : 'Pausar animações';
+        if (replayButton) replayButton.disabled = paused;
         motionButton.hidden = reducedMotion.matches;
         if (paused) {
+          revealAll();
           typewriter.textContent = phrases[phraseIndex];
           charIndex = phrases[phraseIndex].length;
           deleting = true;
@@ -331,42 +449,63 @@
       motionButton.addEventListener('click', () => { userPaused = !userPaused; syncMotion(); });
       reducedMotion.addEventListener('change', syncMotion);
       document.addEventListener('visibilitychange', syncMotion);
-      syncMotion();
 
-      const banner = $('#hero-banner');
-      const fallback = $('#banner-fallback');
-      const updateBanner = () => {
-        const loaded = banner.complete && banner.naturalWidth > 0;
-        banner.hidden = !loaded;
-        fallback.toggleAttribute('hidden', loaded);
-      };
-      banner.addEventListener('load', updateBanner);
-      banner.addEventListener('error', updateBanner);
-      updateBanner();
-      if (new URLSearchParams(location.search).get('editar') === '1') $('#banner-tools').hidden = false;
-      let previewURL;
-      let previewRequest = 0;
-      $('#banner-upload').addEventListener('change', async (event) => {
-        const file = event.target.files[0];
-        if (!file) return;
-        const request = ++previewRequest;
-        if (!['image/png','image/jpeg','image/webp'].includes(file.type)) { notify('Escolha uma imagem PNG, JPG ou WebP.'); return; }
-        if (file.size > 15 * 1024 * 1024) { notify('Escolha uma imagem de até 15 MB.'); return; }
-        const candidateURL = URL.createObjectURL(file);
-        const candidate = new Image();
-        candidate.src = candidateURL;
-        try {
-          await candidate.decode();
-          if (request !== previewRequest) { URL.revokeObjectURL(candidateURL); return; }
-          const previousURL = previewURL;
-          previewURL = candidateURL;
-          banner.src = candidateURL;
-          banner.alt = 'Prévia do banner selecionado para o Movimento Paraná Contra os Corruptos';
-          $('#banner-preview-status').textContent = 'Prévia carregada: ' + file.name;
-          if (previousURL) URL.revokeObjectURL(previousURL);
-        } catch { URL.revokeObjectURL(candidateURL); notify('Não foi possível abrir essa imagem. Escolha outro arquivo.'); }
+      const revealItems = Array.from(document.querySelectorAll('.reveal'));
+      let revealObserver;
+      function showItem(element, delay = 0, instant = false) {
+        if (element.dataset.revealState === 'visible' && !instant) return;
+        element.dataset.revealState = 'visible';
+        element.style.setProperty('--reveal-delay', delay + 'ms');
+        element.classList.toggle('is-entering', !instant && !isPaused());
+        if (revealObserver) revealObserver.unobserve(element);
+      }
+      function revealAll() {
+        if (revealObserver) revealObserver.disconnect();
+        revealItems.forEach(element => showItem(element, 0, true));
+      }
+      function initReveals() {
+        if (isPaused() || !('IntersectionObserver' in window)) { revealAll(); return; }
+        document.documentElement.classList.add('scroll-motion');
+        revealObserver = new IntersectionObserver(entries => {
+          const entering = entries.filter(entry => entry.isIntersecting)
+            .sort((a,b) => revealItems.indexOf(a.target) - revealItems.indexOf(b.target));
+          entering.forEach((entry, index) => showItem(entry.target, Math.min(index * 100, 400)));
+        }, { threshold:0.12, rootMargin:'0px 0px -24px 0px' });
+        revealItems.forEach(element => {
+          element.dataset.revealState = 'waiting';
+          revealObserver.observe(element);
+          element.addEventListener('animationend', event => {
+            if (event.target === element) element.classList.remove('is-entering');
+          });
+        });
+      }
+      document.addEventListener('focusin', event => {
+        const item = event.target.closest('.reveal');
+        if (item) showItem(item, 0, true);
       });
-      window.addEventListener('pagehide', () => { if (previewURL) URL.revokeObjectURL(previewURL); });
+      window.addEventListener('beforeprint', revealAll);
+      const hero = document.querySelector('.banner-wrap');
+      const replayButton = $('#replay-banner');
+      let heroObserver;
+      function playHero() {
+        if (isPaused()) return;
+        hero.classList.remove('hero-playing');
+        void hero.offsetWidth;
+        hero.classList.add('hero-playing');
+      }
+      if (replayButton) {
+        replayButton.hidden = false;
+        replayButton.addEventListener('click', playHero);
+      }
+      syncMotion();
+      initReveals();
+      if ('IntersectionObserver' in window) {
+        heroObserver = new IntersectionObserver(entries => {
+          if (entries.some(entry => entry.isIntersecting)) { playHero(); heroObserver.disconnect(); }
+        }, { threshold:0.15 });
+        heroObserver.observe(hero);
+      } else { playHero(); }
+
     })();
   </script>
 </body>

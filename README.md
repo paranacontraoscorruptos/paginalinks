@@ -9,15 +9,17 @@ Página de links oficiais em português, responsiva e sem etapa de compilação.
 3. Escolha a branch **main** e a pasta **/ (root)** e salve.
 4. Aguarde a publicação. O endereço padrão será `https://paranacontraoscorruptos.github.io/paginalinks/`.
 
-A página também pode ser hospedada em qualquer servidor estático: envie `index.html`, `.nojekyll` e `banner.png`. Não exige Node.js, banco de dados, chaves ou instalação de pacotes. As fontes do Google são opcionais; há fontes locais de reserva.
+A página também pode ser hospedada em qualquer servidor estático: envie `index.html` e `.nojekyll`. Não exige Node.js, banco de dados, chaves ou instalação de pacotes. As fontes do Google são opcionais; há fontes locais de reserva.
 
-## Banner
+## Banner e animações
 
-O banner original exibido na conversa não ficou disponível como arquivo no ambiente. O arquivo `banner.png` contém uma arte de reserva criada com as cores e a identidade cívica do movimento. Essa arte também está incorporada ao HTML em SVG, para continuar aparecendo caso a imagem externa falhe. Ela não é a imagem original enviada na conversa.
+O banner é uma composição em HTML e SVG incorporada ao `index.html`: a bandeira do Brasil se forma por camadas, a balança da justiça é desenhada e o texto surge com profundidade. Não depende de imagens externas, vídeo ou biblioteca de animação.
 
-Para usar o banner original, substitua a arte de reserva pela imagem original, mantendo o nome **`banner.png`**, na mesma pasta de `index.html`. A página a exibirá automaticamente. Caso prefira outro nome ou formato, altere `src="banner.png"` no elemento `id="hero-banner"`.
+O botão **Ver animação** repete a formação do banner. **Pausar animações**, no topo, interrompe os movimentos da página. A preferência de movimento reduzido do dispositivo é respeitada automaticamente.
 
-Para experimentar uma imagem local sem alterar a publicação, acrescente `?editar=1` ao endereço da página e abra **Visualizar outro banner**, no final da página. Essa prévia é temporária, fica apenas no navegador e não envia o arquivo a nenhum servidor. O envio definitivo da imagem deve ser feito ao repositório.
+Títulos, cards e textos do rodapé aparecem quando entram na tela, usando `IntersectionObserver`. As entradas são escalonadas e executadas uma vez por visita. A navegação por teclado revela imediatamente o elemento focado; sem JavaScript ou com movimento reduzido, todo o conteúdo permanece visível.
+
+O fundo usa uma arte estática com losangos, estrelas, faixas verdes e amarelas e símbolos de justiça. Os textos do banner são HTML selecionável, ajustado para celular.
 
 ## Desenvolvimento local
 
@@ -36,7 +38,9 @@ Abra o endereço local do servidor em um navegador. Para encerrar, use `Ctrl+C`.
 - Botão de cópia separado de cada link, com confirmação somente após sucesso.
 - Compartilhamento nativo, cópia como alternativa e envio pelo WhatsApp.
 - Navegação por teclado, foco visível, mensagem de estado acessível e alternativa manual quando a cópia é negada.
-- Fundo estático; animações de interface pausáveis e respeito à preferência de movimento reduzido.
+- Bandeira animada no banner, títulos com entrada de profundidade e cards revelados durante a rolagem.
+- Fundo patriótico estático; animações pausáveis e respeito à preferência de movimento reduzido.
+- Chamada em destaque e rodapé ampliado com acabamento verde e amarelo.
 - Título, rodapé e descrições em português brasileiro.
 
 A **Página no Facebook** usa o endereço de compartilhamento fornecido; o **Grupo no Facebook** aponta para `https://www.facebook.com/groups/518450788618734`. Ao atualizar qualquer destino, altere o `href` do link e o `data-url` do respectivo botão de copiar.
